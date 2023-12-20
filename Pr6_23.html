@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Пратическая работа №6</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="scripts.js"></script>
+</head>
+<body>
+  <div class="conteiner">
+    <div class="box box1">
+      <div class="item item1"></div>
+      <h1><div class="item item2">ГОРОСКОП</div></h1>   
+      <div class="item item3"></div>
+    </div>
+    <div class="box box2">
+        <div class="item item4"></div>
+        <div class="item item5"><div class="slider">
+          <img src="image/logo1.png" alt="Изображение 1" class="slide">
+          <img src="image/logo2.png" alt="Изображение 2" class="slide">
+          <img src="image/logo3.png" alt="Изображение 3" class="slide">
+          <img src="image/logo4.png" alt="Изображение 4" class="slide">
+          <img src="image/logo5.png" alt="Изображение 5" class="slide">
+          <img src="image/logo6.png" alt="Изображение 6" class="slide">
+          <img src="image/logo7.png" alt="Изображение 7" class="slide">
+          <img src="image/logo8.png" alt="Изображение 8" class="slide">
+          <img src="image/logo9.png" alt="Изображение 9" class="slide">
+          <img src="image/logo10.png" alt="Изображение 10" class="slide">
+          <img src="image/logo11.png" alt="Изображение 11" class="slide">
+          <img src="image/logo12.png" alt="Изображение 12" class="slide">
+          </div>
+          <div class="control">
+            <label for="point1"></label>
+            <label for="point2"></label>
+            <label for="point3"></label>
+          </div>
+        </div>
+        <div class="item item6"></div>
+    </div>
+    <div class="box box3">
+        <div class="item item7"></div>
+        <div class="item item8"><div id="question">
+          <p>Хотите знать о себе?</p>
+          <button onclick="showMethodSelection('yes')">Да</button>
+          <button onclick="showMethodSelection('no')">Нет</button>
+          </div>
+        </div>
+        <div class="item item9"></div> 
+    </div>
+    <div class="box box4">
+        <div class="item item10"></div>
+        <div class="item item11"><div id="methodSelection">
+          <p>По году или по знаку зодиака?</p>
+          <button onclick="showDateField('year')">По году</button>
+          <button onclick="showDateField('zodiac')">По зодиаку</button>
+          </div>
+        </div>
+        <div class="item item12"></div>
+    </div>
+    <div class="box box5">
+        <div class="item item13"><div id="dateField">
+          <p>Введите дату рождения:</p>
+          <input type="date" id="birthdate" required>
+          <button onclick="confirmDate()">Подтвердить</button>
+          </div>
+        </div>
+        <div class="item item14"></div>
+        <div class="item item15"><div id="zodiacSelection">
+          <p>Выберите знак зодиака:</p>
+          <select id="zodiacSign">
+            <option value="aries">Овен</option>
+            <option value="taurus">Телец</option>
+            <option value="gemini">Близнецы</option>
+            <option value="gemin2">Рыбы</option>
+            <option value="gemin3">Козерог</option>
+            <option value="gemin4">Стрелец</option>
+            <option value="gemin5">Лев</option>
+            <option value="gemin6">Водолей</option>
+            <option value="gemin7">Рак</option>
+            <option value="gemin8">Дева</option>
+            <option value="gemin9">Весы</option>
+            <option value="gemin10">Скорпион</option>
+            
+          </select>
+          <button onclick="confirmZodiac()">Подтвердить</button>
+          </div>
+        </div>
+    </div>
+    <div class="box box6">
+      <div class="item item16"></div>
+      <div class="item item17"><div>
+        <p id="qualities"></p>
+        </div>
+      </div>
+      <div class="item item18"></div>
+    </div>
+    <div class="box box6">
+      <div class="item item19"></div>
+      <div class="item item20"><div class="massage">Хотите ввести новые данные?</div>
+        <div class="button-conteiner">
+          <br>
+          <button class="button" onclick="restart()">Да</button>
+        </div>
+      </div>
+      <div class="item item21"></div>
+    </div>
+  </div>
+    <script>
+      let currentIndex = 0;
+const slides = document.querySelectorAll('.slide');
+const slideInterval = 3000;
+ 
+function changeSlide() {
+  slides[currentIndex].style.opacity = 1;
+  currentIndex = (currentIndex + 1) % slides.length;
+  slides[currentIndex].style.opacity = 1;
+}
+setInterval(changeSlide, slideInterval);
+    </script>
+</body>
+</html>
